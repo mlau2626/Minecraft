@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &275753169197587205
+--- !u!1001 &1016618125650105914
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -60,13 +60,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f9e363087b3daca43bf49f1800daba32, type: 2}
+    - target: {fileID: -1643348696922910017, guid: d00d2a12ab707de47a899b17567854fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 11475858581f2bd4a8289f3432499144, type: 2}
     - target: {fileID: -418221070935294003, guid: d00d2a12ab707de47a899b17567854fd, type: 3}
       propertyPath: m_Name
       value: Block_Top
       objectReference: {fileID: 0}
+    - target: {fileID: 829278779872415110, guid: d00d2a12ab707de47a899b17567854fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 22784a4a5b3bf224ea7296d634a681e7, type: 2}
     - target: {fileID: 919132149155446097, guid: d00d2a12ab707de47a899b17567854fd, type: 3}
       propertyPath: m_Name
-      value: MultiTextureBlock
+      value: MultiTextureBlock-Top_Bottom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
