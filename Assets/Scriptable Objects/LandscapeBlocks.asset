@@ -13,12 +13,23 @@ MonoBehaviour:
   m_Name: LandscapeBlocks
   m_EditorClassIdentifier: 
   blocks:
+  - name: bedrock
+    blockId: 1
+    blockPrefab: {fileID: 8782264629855960441, guid: 128e6bc4c097a46b0837742393aa6081, type: 3}
+    hardness: -1
   - name: grass
+    blockId: 2
     blockPrefab: {fileID: 4572772038458449592, guid: 4cc6edcc11f644cb79fda0f97d48b1ac, type: 3}
     hardness: 3
   - name: dirt
+    blockId: 3
     blockPrefab: {fileID: 2316200434386349182, guid: c1825690d7eb746ddb3fa56ff00dd78e, type: 3}
     hardness: 3
-  - name: sand
-    blockPrefab: {fileID: 6169210649711002283, guid: 96ce3cff58678450ebcd951890f9ed20, type: 3}
-    hardness: 2
+  - name: coarse_dirt
+    blockId: 4
+    blockPrefab: {fileID: 1617974823574832652, guid: e5143c5e9654d4e10a59952c5f0500c4, type: 3}
+    hardness: 3
+  - name: diamond_ore
+    blockId: 5
+    blockPrefab: {fileID: 8291952217515565392, guid: 543670630321843fbac8710540a0cc95, type: 3}
+    hardness: 30
