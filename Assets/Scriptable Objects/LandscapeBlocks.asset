@@ -14,22 +14,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocks:
   - name: bedrock
-    blockId: 1
     blockPrefab: {fileID: 8782264629855960441, guid: 128e6bc4c097a46b0837742393aa6081, type: 3}
     hardness: -1
   - name: grass
-    blockId: 2
     blockPrefab: {fileID: 4572772038458449592, guid: 4cc6edcc11f644cb79fda0f97d48b1ac, type: 3}
     hardness: 3
+  - name: sand
+    blockPrefab: {fileID: 6169210649711002283, guid: 96ce3cff58678450ebcd951890f9ed20, type: 3}
+    hardness: 5
   - name: dirt
-    blockId: 3
     blockPrefab: {fileID: 2316200434386349182, guid: c1825690d7eb746ddb3fa56ff00dd78e, type: 3}
     hardness: 3
   - name: coarse_dirt
-    blockId: 4
     blockPrefab: {fileID: 1617974823574832652, guid: e5143c5e9654d4e10a59952c5f0500c4, type: 3}
     hardness: 3
+  - name: sandstone
+    blockPrefab: {fileID: 7359833062584578629, guid: a07f67b3102419647b79e518310b4029, type: 3}
+    hardness: 5
+  - name: stone
+    blockPrefab: {fileID: 8788149377043742459, guid: ca59d3f341c0a4c48a63655602d32b95, type: 3}
+    hardness: 5
   - name: diamond_ore
-    blockId: 5
     blockPrefab: {fileID: 8291952217515565392, guid: 543670630321843fbac8710540a0cc95, type: 3}
     hardness: 30
+  - name: iron_ore
+    blockPrefab: {fileID: 7617306184977863405, guid: e68ecd6de687045dca34fb39a5fffc59, type: 3}
+    hardness: 10
+  - name: coal_ore
+    blockPrefab: {fileID: 2850280831690149985, guid: 31e97cf21acf64264bf052f1ac678d45, type: 3}
+    hardness: 5
+  - name: redstone_ore
+    blockPrefab: {fileID: 4340781869960230211, guid: edf7f724eda8a4f998bb4ebe439c305d, type: 3}
+    hardness: 10
+  - name: gold_ore
+    blockPrefab: {fileID: 7494932241548252171, guid: 3ae35bbc0d1ec40eb9b14e00a00242b4, type: 3}
+    hardness: 15
+  - name: emerald_ore
+    blockPrefab: {fileID: 2800033723191278355, guid: ea33e3c3d21a44c3fa953fd04208a0b1, type: 3}
+    hardness: 10
+  - name: lapis_ore
+    blockPrefab: {fileID: 2800033723191278355, guid: ea33e3c3d21a44c3fa953fd04208a0b1, type: 3}
+    hardness: 10
+  - name: netherquartz_ore
+    blockPrefab: {fileID: 834220483443426328, guid: 29ba36942255a40beb0845a5438f3d4d, type: 3}
+    hardness: 20

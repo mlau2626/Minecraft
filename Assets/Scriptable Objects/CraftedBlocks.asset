@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20ec034e5b221c4484cf3d3ed7d4a86, type: 3}
+  m_Name: CraftedBlocks
+  m_EditorClassIdentifier: 
+  blocks:
+  - name: stone_bricks_block
+    blockPrefab: {fileID: 8803680119436307010, guid: 0d25bac1627cfdd4f8471104d3adad78, type: 3}
+    hardness: 5
+  - name: spruce_planks_block
+    blockPrefab: {fileID: 4495154372978951816, guid: 3eed47fef85ea4c4eb2345d91920995c, type: 3}
+    hardness: 3
+  - name: black_wool_block
+    blockPrefab: {fileID: 4459362053384801344, guid: 88e802c34942e400ebe0442c3141b53c, type: 3}
+    hardness: 3
+  - name: diamond_block
+    blockPrefab: {fileID: 6271697977752384485, guid: 5215050567d484902b14f01e8fd790d2, type: 3}
+    hardness: 20
+  - name: iron_block
+    blockPrefab: {fileID: 3230251357572295562, guid: 8a62cca5f6a994545aeb9491b88e31f1, type: 3}
+    hardness: 10
+  - name: coal_block
+    blockPrefab: {fileID: 6762894453779375229, guid: 644236f52c7e14e73b2b77d3450d2b53, type: 3}
+    hardness: 5
+  - name: redstone_block
+    blockPrefab: {fileID: 2032047334341259779, guid: f6c72f2ac5f6b497b94d3f98b51dca4c, type: 3}
+    hardness: 10
+  - name: gold_block
+    blockPrefab: {fileID: 6654994996421873964, guid: a3b31a57066eb4677a0491788733864b, type: 3}
+    hardness: 10
+  - name: emerald_block
+    blockPrefab: {fileID: 1370896560170070763, guid: f18ce1d2500de45d0a1dcf24b7de8910, type: 3}
+    hardness: 10
+  - name: lapis_block
+    blockPrefab: {fileID: 4483976652230107966, guid: a2f454fe796bf4156b215b24946369f4, type: 3}
+    hardness: 10

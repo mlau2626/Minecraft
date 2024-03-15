@@ -1,17 +1,18 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LandGenerator : MonoBehaviour
 {
-    [SerializeField] int width;
-    [SerializeField] int height;
-    [SerializeField] int length;
+    [SerializeField] int width = 32;
+    [SerializeField] int height = 0;
+    [SerializeField] int length = 32;
 
-    int bedrockDepth = -100;
-    int minDiamondOreDepth = -20;
+    int bedrockDepth = -86;
+    int minDiamondOreDepth = -82;
     float diamondOreChance = .05f;
-    Dictionary<Vector3Int, int> worldArray; // make faster lookup
+    Dictionary<Vector3Int, string> chunkArray; // make faster lookup
 
     [SerializeField] Landscape landscape;
 
@@ -20,36 +21,64 @@ public class LandGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        worldArray = new Dictionary<Vector3Int, int>();
-        GenerateWorld();
-        SpawnWorld2();
+        chunkArray = new Dictionary<Vector3Int, string>();
+        GenerateChunk();
+        SpawnChunk2();
     }
 
-    void GenerateWorld()
+    void GenerateChunk()
     {
-        for (int h = -100; h < height; h++)
+        List<string> choices = new List<string>();
+        for (int x = 0; x < length; x++)
         {
-            for(int w = -100; w < width; w++)
+            for(int z = 0; z < width; z++)
             {
-                for( int l = -100; l < length; l++)
+                for( int y = bedrockDepth; y < height; y++)
                 {
-                    Vector3Int pos = new Vector3Int(h, w, l);
-                    worldArray[pos] = 0;
+                    Vector3Int pos = new Vector3Int(x, y, z);
+                    chunkArray[pos] = null;
 
-                    if (h == -100)
+                    if (y == bedrockDepth)
                     {
-                        worldArray[pos] = landscape.blocksDict["bedrock"].blockId;
+                        chunkArray[pos] = landscape.blocksDict["bedrock"].name;
                     }
-                    else if (h < -95 && Random.Range(0, 1.0f) > .5f)
+                    else if (y < minDiamondOreDepth)
                     {
-                        if (worldArray[new Vector3Int(h - 1,w,l)] == landscape.blocksDict["bedrock"].blockId)
+                        choices.Clear();
+                        choices = new List<string>() { "stone", "diamond_ore", "coarse_dirt" };
+                        if (Random.Range(0, 1.0f) > .7f)
                         {
-                            worldArray[pos] = landscape.blocksDict["bedrock"].blockId;
+                            if (chunkArray[new Vector3Int(x, y - 1, z)] == landscape.blocksDict["bedrock"].name)
+                            {
+                                chunkArray[pos] = landscape.blocksDict["bedrock"].name;
+                            }
+                            else
+                            {
+                                chunkArray[pos] = landscape.blocksDict["stone"].name;
+                            }
                         }
+                        else
+                        {
+                            int index = Random.Range(0, choices.Count);
+                            chunkArray[pos] = landscape.blocksDict[choices[index]].name;
+                        }
+                        
+                    }
+                    else if (y < -10)
+                    {
+                        choices.Clear();
+                        choices = new List<string> { "stone", "sand", "coarse_dirt", "sandstone"};
+                        foreach (var label in choices) { Debug.Log(label); }
+                        int index = Random.Range(0, choices.Count);
+                        chunkArray[pos] = landscape.blocksDict[choices[index]].name;
+                    }
+                    else if (y < -1)
+                    {
+                        chunkArray[pos] = landscape.blocksDict["dirt"].name;
                     }
                     else
                     {
-                        worldArray[pos] = landscape.blocksDict["stone"].blockId;
+                        chunkArray[pos] = landscape.blocksDict["grass"].name;
                     }
                     
                 }
@@ -57,18 +86,19 @@ public class LandGenerator : MonoBehaviour
         }
     }
 
-    void SpawnWorld1()
+    void SpawnChunk1()
     {
-        for (int h = -100; h < height; h++)
+        for (int x = -50; x < length; x++)
         {
-            for (int w = -100; w < width; w++)
+            for (int z = -50; z < width; z++)
             {
-                for (int l = -100; l < length; l++)
+                for (int y = -50; y < height; y++)
                 {
-                    Vector3Int pos = new Vector3Int(h, w, l);
+                    Vector3Int pos = new Vector3Int(x, y, z);
                     foreach(var kvp in landscape.blocksDict)
                     {
-                        if (kvp.Value.blockId == worldArray[pos])
+                        if (kvp.Value.name == null) { continue; }
+                        if (kvp.Value.name == chunkArray[pos])
                         {
                             Instantiate(kvp.Value.blockPrefab,
                                 pos,
@@ -84,8 +114,16 @@ public class LandGenerator : MonoBehaviour
         }
     }
 
-    void SpawnWorld2()
+    void SpawnChunk2()
     {
-
+        foreach(var kvp in chunkArray)
+        {
+            if (kvp.Value != null)
+            {
+                Instantiate(landscape.blocksDict[kvp.Value].blockPrefab,
+                            kvp.Key,
+                            landscape.blocksDict[kvp.Value].blockPrefab.transform.rotation);
+            }
+        }
     }
 }

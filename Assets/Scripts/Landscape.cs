@@ -10,7 +10,6 @@ public class Landscape: ScriptableObject
     public class LandscapeBlocks
     {
         public string name;
-        public int blockId;
         public GameObject blockPrefab;
         public int hardness;
     }
