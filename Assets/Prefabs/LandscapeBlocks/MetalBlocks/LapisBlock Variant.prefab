@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4792619405213499141, guid: 5215050567d484902b14f01e8fd790d2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6271697977752384485, guid: 5215050567d484902b14f01e8fd790d2, type: 3}
       propertyPath: m_Name
       value: LapisBlock Variant

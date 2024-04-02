@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e4c5b551fa3e7467f9860e15f88cafae, type: 2}
+    - target: {fileID: 6515727777270649084, guid: 543670630321843fbac8710540a0cc95, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8291952217515565392, guid: 543670630321843fbac8710540a0cc95, type: 3}
       propertyPath: m_Name
       value: IronOreBlock Variant
